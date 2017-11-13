@@ -1,0 +1,56 @@
+<?php 
+echo $v_params['lastLogin'] ? "<p class='text-center text-blank'>
+Há uma conta salva neste computador! Email da conta: ".$v_params['email']." -> 
+
+<a href='?controle=UserAcc&acao=lastLogin'>
+LOGAR
+</a>
+
+<br> Ou você pode 
+
+<a href='?controle=UserAcc&acao=cleanLastLogin'>
+Esquecer Conta
+</a>
+
+</p>" : "
+<p class='text-center text-blank'>
+Este será o sistema de login mais desnecessário que verás hoje.
+</p>"?>
+
+<div class="col-xs-4 col-lg-5 col-md-5 col-sm-5 container"></div>
+	<form method='post' action="?controle=UserAcc&acao=loginChecker" class="loginBox">
+		<table class="table-condensed">
+			<tr>
+				<th class="text-center text-blank">
+					Email
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="email" name="st_email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" required>
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					Senha
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="password" name="st_senha" pattern=".{6,}" title="Necessário ter 6 ou mais carácteres" required>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="submit" value="LOGAR" class="formButton">
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					<a href="?controle=UserAcc&acao=register" class="btn butaum">REGISTRAR</a>
+				</th>
+			</tr>
+		</table>
+		<?php echo isset($v_params["error"]) ? "<p class='text-center text-danger'>".$v_params["error"]."</p>" : "" ;?>
+	</form>
+</div>

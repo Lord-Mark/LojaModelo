@@ -1,0 +1,72 @@
+<?php
+$v_params = $this->getParams();
+$active = $v_params["active"];
+?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Java Da Depre</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php 
+/*
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+*/
+  ?>
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li<?php echo ($active == 'profile' ? ' class="active"' : ""); ?>>
+        <a href="?controle=Home&acao=index">
+          Profile
+        </a>
+      </li>
+      
+      <li<?php echo ($active == 'projetos' ? ' class="active"' : ""); ?>>
+        <a href="#">
+          Projetos
+        </a>
+      </li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+
+      <li<?php
+      
+      echo $active == 'registrar' ? ' class="active"' : ""; 
+
+      ?>>
+        <a href=<?php
+        echo $v_params["logged"] ? "?controle=UserAcc&acao=register" : "?controle=UserAcc&acao=register";
+      
+      ?>><span class="glyphicon glyphicon-user"></span> <?php
+
+      echo $v_params["logged"] ? $v_params["st_nome"] : "Registrar"; 
+
+      ?></a>
+      </li>
+      
+      <li<?php
+
+      echo ($active == 'login' ? ' class="active"' : "");
+
+      ?>>
+        <a href=<?php
+        echo $v_params["logged"] ? "?controle=UserAcc&acao=disconnect" : "?controle=UserAcc&acao=login";
+      
+      ?>><span class="glyphicon glyphicon-log-in"></span> <?php
+        echo $v_params["logged"] ? "Sair" : "Logar";
+        ?></a>
+      </li>
+    </ul>
+  
+  </div>
+</nav>

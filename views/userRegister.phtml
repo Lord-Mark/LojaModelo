@@ -1,0 +1,59 @@
+<p class='text-center text-blank'>Preencha os dados abaixo para logar</p>
+<div class="col-xs-4 col-lg-5 col-md-5 col-sm-5 container"></div>
+	<form method='post' action="?controle=UserAcc&acao=validateRegister" class="loginBox">
+		<table class="table-condensed">
+			<tr>
+				<th class="text-center text-blank">
+					Nome
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="text" name="st_nome" pattern=".{3,}" required>
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					Email
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="email" name="st_email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" required>
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					Senha
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="password" name="st_pass1" pattern=".{6,}" required>
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					Repita a senha
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="password" name="st_pass2" pattern=".{6,}" title="Insira 6 ou mais carácteres" required>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="submit" value="REGISTRAR" class="formButton">
+				</th>
+			</tr>
+			<tr>
+				<th class="text-center text-blank">
+					<a href="?controle=UserAcc&acao=login" class="btn butaum">LOGAR</a>
+				</th>
+			</tr>
+		</table>
+		<?php
+		echo isset($v_params["error"]) ? "<p class='text-center text-danger'>".$v_params["error"]."</p>" : "" ;?>
+	</form>
+</div>

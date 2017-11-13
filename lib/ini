@@ -1,0 +1,1 @@
+Nesse diretório, irei guardar as classes diretamente ligadas ao sistema, como por exemplo, classes de filtros de dados, validações genéricas, helpers (caso haja algum), interfaces e abstrações não ligadas à camada de negócio do sistema. Se estivesse construindo um framework em PHP, guardaria as classes do mesmo nesse diretório.

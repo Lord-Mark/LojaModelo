@@ -1,0 +1,86 @@
+body {
+  background-color: #394249 !important;
+}
+.alignment-left{
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.alignment-right{
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+.text-blank{
+  color: #EEE;
+}
+.text-blue{
+  color: #66d9ef;
+}
+.text-green{
+  color: #a6e22e;
+}
+.text-red{
+  color: #f62671;
+}
+.text-comment{
+  color: #777;
+}
+.text-yellow{
+  color: #e6db74;
+}
+.new-block{
+  padding-top: 20px;
+}
+.text-ident{
+  padding-left: 100px !important;;
+}
+.loginBox{
+  background-color: #353842;
+  padding-bottom: 20px;
+  box-shadow: 0 8px 10px 5px;
+}
+
+input{
+  color: #fff !important;
+  background: rgba(0,0,0, 0.3);
+  border: solid 1px #fff;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: #111 2px 3px 4px;
+}
+.formButton{
+  width: 100%;
+  background: rgba(3,3,3,0.2);
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 30px;
+}
+.formButton:hover{
+  background: rgba(4,4,4,0.5);
+}
+.butaum{
+  background: #354580;
+  text-decoration: none !important;
+  color: #CCC;
+  width: 100%;
+  border-radius: 8px !important;
+  box-shadow: #111 2px 3px 4px;
+    -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.butaum:hover{
+  color: #FFF !important;
+  background-color: #304070;
+}
+input:valid{
+  border: solid #6F5 1px;
+}
+input:invalid{
+  border: solid #F65 1px;
+}
