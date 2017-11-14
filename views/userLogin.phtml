@@ -1,6 +1,7 @@
+<div class="big-separator"></div>
 <?php 
 echo $v_params['lastLogin'] ? "<p class='text-center text-blank'>
-Há uma conta salva neste computador! Email da conta: ".$v_params['email']." -> 
+Você tem uma conta logada neste site! Email da conta: ".$v_params['email']." -> 
 
 <a href='?controle=UserAcc&acao=lastLogin'>
 LOGAR
@@ -16,7 +17,6 @@ Esquecer Conta
 <p class='text-center text-blank'>
 Este será o sistema de login mais desnecessário que verás hoje.
 </p>"?>
-
 <div class="col-xs-4 col-lg-5 col-md-5 col-sm-5 container"></div>
 	<form method='post' action="?controle=UserAcc&acao=loginChecker" class="loginBox">
 		<table class="table-condensed">

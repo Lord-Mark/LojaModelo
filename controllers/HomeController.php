@@ -39,8 +39,6 @@ class HomeController
 				
 				#Adiciona os dados do user para depois ser utilizado na view
 				$this->v_params["st_nome"] = $userData["st_nome"];
-				$this->v_params["st_senha"] = $userData["st_senha"];
-				$this->v_params["st_email"] = $userData["st_email"];
 			}else
 				$this->v_params["logged"] = false;
 		}else{
@@ -50,12 +48,11 @@ class HomeController
 
 	public function indexAction()
 	{
-		$arrayName = array(
-				'asd' => "asda",
-				'huehue' => 213
-				);
+		#define qual aba estará ativa na navbar
 		$this->v_params["active"] = "home";
+		#adiciona o arquivo home.phtml para ser exibido entre o header e o footer
 		$this->o_view->addView("views/home.phtml");
+		#passa os parâmetros para a view (se está logado, nome do user, etc.)
 		$this->o_view->setParams($this->v_params);
 
 		$this->o_view->showContents();

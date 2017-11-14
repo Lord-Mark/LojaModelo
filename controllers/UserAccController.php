@@ -159,7 +159,11 @@ class UserAccController
 	public function cleanLastLoginAction($relog = true)
 	{
 		$this->v_params["logged"] = false;
+		unset($_SESSION["email"]);
+		unset($_SESSION["senha"]);
+
 		session_destroy();
+		
 		if ($relog)
 			$this->loginAction();
 	}

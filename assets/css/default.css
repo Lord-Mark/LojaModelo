@@ -62,6 +62,11 @@ input{
 .formButton:hover{
   background: rgba(4,4,4,0.5);
 }
+
+.big-separator{
+  margin-bottom: 100px;
+}
+
 .butaum{
   background: #354580;
   text-decoration: none !important;
