@@ -54,7 +54,7 @@ class HomeController
 				'asd' => "asda",
 				'huehue' => 213
 				);
-		$this->v_params["active"] = "profile";
+		$this->v_params["active"] = "home";
 		$this->o_view->addView("views/home.phtml");
 		$this->o_view->setParams($this->v_params);
 

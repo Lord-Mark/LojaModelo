@@ -5,68 +5,124 @@ $active = $v_params["active"];
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title>Java Da Depre</title>
+  <title>Modelo de Loja</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php 
-/*
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-*/
-  ?>
+
   <link rel="stylesheet" href="assets/css/default.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     
-    <ul class="nav navbar-nav">
-      <li<?php echo ($active == 'profile' ? ' class="active"' : ""); ?>>
-        <a href="?controle=Home&acao=index">
-          Profile
-        </a>
-      </li>
-      
-      <li<?php echo ($active == 'projetos' ? ' class="active"' : ""); ?>>
-        <a href="#">
-          Projetos
-        </a>
-      </li>
-    </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <p class="navbar-toggle navbar-text">Loja Modelo</p>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
     
-    <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
+        <li<?php echo ($active == 'home' ? ' class="active"' : ""); ?>>
+          <a href="?controle=Home&acao=index">
+            Home
+          </a>
+        </li>
+        
+        <li <?php echo ($active == 'roupas' ? ' class="dropdown active"' : 'class="dropdown"'); ?>>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Roupas <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Todas</a>
+            </li>
+            
+            <li class="divider"></li> 
+            
+            <li>
+              <a href="#">Camisas</a>
+            </li>
+            <li>
+              <a href="#">Calças</a>
+            </li>
+            <li>
+              <a href="#">Bonés</a>
+            </li>
+          </ul>
+        </li>
 
-      <li<?php
+        <li <?php echo ($active == 'eletrônicos' ? ' class="dropdown active"' : 'class="dropdown"'); ?>>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Eletrônicos <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Todos</a>
+            </li>
+            
+            <li class="divider"></li> 
+            
+            <li>
+              <a href="#">Celulares</a>
+            </li>
+            <li>
+              <a href="#">Computadores</a>
+            </li>
+            <li>
+              <a href="#">Home Theaters</a>
+            </li>
+          </ul>
+        </li>
+
+        <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar produto">
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+        </form>
+      </ul>
       
-      echo $active == 'registrar' ? ' class="active"' : ""; 
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li<?php
+        
+        echo $active == 'registrar' ? ' class="active"' : ""; 
 
-      ?>>
-        <a href=<?php
-        echo $v_params["logged"] ? "?controle=UserAcc&acao=register" : "?controle=UserAcc&acao=register";
-      
-      ?>><span class="glyphicon glyphicon-user"></span> <?php
+        ?>>
+          <a href=<?php
+          echo $v_params["logged"] ? "?controle=UserAcc&acao=register" : "?controle=UserAcc&acao=register";
+        
+        ?>><span class="glyphicon glyphicon-user"></span> <?php
 
-      echo $v_params["logged"] ? $v_params["st_nome"] : "Registrar"; 
+        echo $v_params["logged"] ? $v_params["st_nome"] : "Registrar"; 
 
-      ?></a>
-      </li>
-      
-      <li<?php
-
-      echo ($active == 'login' ? ' class="active"' : "");
-
-      ?>>
-        <a href=<?php
-        echo $v_params["logged"] ? "?controle=UserAcc&acao=disconnect" : "?controle=UserAcc&acao=login";
-      
-      ?>><span class="glyphicon glyphicon-log-in"></span> <?php
-        echo $v_params["logged"] ? "Sair" : "Logar";
         ?></a>
-      </li>
-    </ul>
-  
+        </li>
+        
+        <li<?php
+
+        echo ($active == 'login' ? ' class="active"' : "");
+
+        ?>>
+          <a href=<?php
+          echo $v_params["logged"] ? "?controle=UserAcc&acao=disconnect" : "?controle=UserAcc&acao=login";
+        
+        ?>><span class="glyphicon glyphicon-log-in"></span> <?php
+          echo $v_params["logged"] ? "Sair" : "Logar";
+          ?></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

@@ -84,3 +84,98 @@ input:valid{
 input:invalid{
   border: solid #F65 1px;
 }
+.navbar-nav > li > .dropdown-menu {
+  background-color: #222;
+  border-radius: 0 0 10px 10px;
+}
+.navbar-nav > li > .dropdown-menu > .divider{
+  background: #333;
+}
+.navbar-nav > li > .dropdown-menu a {
+  color: #DDD;
+}
+.navbar-nav > li > .dropdown-menu a:hover {
+  background: #151515;
+}
+
+.navbar-nav > form > .form-group > input {
+  color: #222 !important;
+  padding-right: 200px;
+  margin-left: 20px;
+}
+
+.navbar-nav > form > button{
+  background: #1A1D25;
+  padding: 7px 10px 7px 10px;
+  border-radius: 0 8px 8px 0;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #ddd;
+  border: solid #019ac4 1px;
+}
+
+.navbar-nav > form > button:hover{
+  background: #000;
+  color: #FFF;
+  border: solid #03a02f 1px;
+  padding-right: 20px;
+}
+
+header{
+  margin-top: 54px;
+  background: url("../../assets/img/banner.jpeg") repeat-y;
+  background-size: 100% 100%;
+  height: 350px;
+}
+
+.separator {
+  background: #000;
+  height: 1px;
+  box-shadow: #000 0 5px 6px;
+  margin-bottom: 20px;
+}
+.navbar-text{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+@media screen and (max-width: 970px) {
+
+  .navbar-nav > form > .form-group > input {
+    padding-right: 5px;
+  }
+  .navbar-nav > form > .form-group > input {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 801px) {
+
+  .navbar-nav > form > .form-group > input {
+    padding-right: 0;
+  }
+  .navbar-nav > form > button{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .navbar-nav > form > button:hover {
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    height: 200px;
+  }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
