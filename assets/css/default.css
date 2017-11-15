@@ -139,11 +139,16 @@ header{
   background: #000;
   height: 1px;
   box-shadow: #000 0 5px 6px;
-  margin-bottom: 20px;
 }
 .navbar-text{
   margin-top: 3px;
   margin-bottom: 3px;
+}
+.sidebar{
+  border-right: #353840 solid 3px;
+  background: #252830;
+  padding-top: 50px;
+  padding-bottom: 100%;
 }
 @media screen and (max-width: 970px) {
 

@@ -23,7 +23,7 @@ abstract class PersistModelAbstract
         
         //Inicio de conexão com MySQL 
         $st_host = 'localhost';
-        $st_banco = 'JavaDaDepre';
+        $st_banco = 'lojaModelo';
         $st_usuario = 'root';
         $st_senha = '';
 

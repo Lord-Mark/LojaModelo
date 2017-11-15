@@ -98,7 +98,7 @@ class UserModel extends PersistModelAbstract
 				$this->o_db->exec($sql);
 				return 0;
 			} catch (PDOException $e) {
-				throw new Exception("Não foi possível inserir o usuário '$st_nome' no banco de dados.");
+				throw new Exception("Não foi positionsível inserir o usuário '$st_nome' no banco de dados.");
 			}
 		}else{
 			return "O email $st_email já está registrado";
@@ -171,5 +171,21 @@ class UserModel extends PersistModelAbstract
         {
             throw $e;
         }
+	}
+	public function getShorterName($name)
+	{
+		$name = trim($name);
+		$firstNamePos = strpos($name, ' ');
+		if ($firstNamePos !== false){
+			$firstName = substr($name, 0, $firstNamePos);
+			return $firstName;
+		}
+		elseif ($firstNamePos == 0) {
+			return $this->getShorterName(substr($name, 1));
+		}
+		else{
+			return $name;
+		}
+
 	}
 }
