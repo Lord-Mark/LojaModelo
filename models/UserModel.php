@@ -179,11 +179,7 @@ class UserModel extends PersistModelAbstract
 		if ($firstNamePos !== false){
 			$firstName = substr($name, 0, $firstNamePos);
 			return $firstName;
-		}
-		elseif ($firstNamePos == 0) {
-			return $this->getShorterName(substr($name, 1));
-		}
-		else{
+		} else {
 			return $name;
 		}
 
