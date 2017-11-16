@@ -56,3 +56,4 @@ class ProdutosModel extends PersistModelAbstract
     {
         return $this->data;
     }
+}
