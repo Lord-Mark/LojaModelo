@@ -29,8 +29,8 @@ class ProdutosModel extends PersistModelAbstract
         if ($produto !== false) {
             $this->data = $produto;
             return $produto;
-        }else{
-            $error "O produto não foi encontrado";
+        } else {
+            $error = "O produto não foi encontrado";
             return $error;
         }
     }
