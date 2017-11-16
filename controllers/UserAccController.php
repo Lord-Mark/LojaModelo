@@ -69,7 +69,9 @@ class UserAccController
 				* caso contrário o else será executado mandando a mensagem de erro (armazenada na variável) para a view.
 				*/
 				if (!$b_registro){
-					header("Location: ?controle=Home&acao=index");
+					#Manda os dados pro método loginCheckerAction, que irá logar o user e então irá redirecionar pra Home
+					echo "entrou";
+					$this->loginCheckerAction($_REQUEST["st_email"], $_REQUEST["st_pass1"]);
 				}else{
 					$this->v_params["error"] = $b_registro;
 					$this->registerAction();
@@ -121,7 +123,8 @@ class UserAccController
 				$this->v_params["senha"] = $st_senha;
 				
 				$_SESSION["logged"] = true;
-
+				$_SESSION["email"] = $st_email;
+				$_SESSION["senha"] = $st_senha;
 				header("Location: ?controle=Home&acao=index");
 			}else{
 				$this->v_params["error"] = "Verifique se os dados inseridos estão corretos e tente novamente.";
