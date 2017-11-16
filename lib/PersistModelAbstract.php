@@ -13,14 +13,6 @@ abstract class PersistModelAbstract
       
     function __construct()
     {
-         
-        /* Inicio de conexão com SQLite     
-        $this->o_db = new PDO("sqlite:./databases/db.sq3");
-        $this->o_db->setAttribute ( PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION );
-        Fim de conexão com SQLite
-        */  
-         
-        
         //Inicio de conexão com MySQL 
         $st_host = 'localhost';
         $st_banco = 'lojaModelo';
