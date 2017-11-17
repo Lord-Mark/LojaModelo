@@ -2,6 +2,7 @@
 
 #Incluindo classes da camada Model
 require_once 'models/UserModel.php';
+require_once 'models/ProdutosModel.php';
 
 class HomeController
 {
@@ -50,7 +51,18 @@ class HomeController
 		#define qual aba estará ativa na navbar
 		$this->v_params["active"] = "home";
 		#adiciona o arquivo home.phtml para ser exibido entre o header e o footer
+		
+		$this->produtos = new ProdutosModel();
+        $produtosData = $this->produtos->setProduto(1);
+
+        $this->v_params = array_merge($this->v_params, $produtosData);
+
+        #print_r($v_params);
 		$this->o_view->addView("views/home.phtml");
+
+		#lista de produtos
+		$this->o_view->addView("views/produtoShow.phtml");
+		$this->o_view->addView("views/closeDiv.html");
 		#adiciona a sidebar
 		$this->o_view->addView("views/master/sidebar.phtml");
 		#passa os parâmetros para a view (se está logado, nome do user, etc.)

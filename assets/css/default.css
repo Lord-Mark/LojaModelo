@@ -150,8 +150,16 @@ header{
   padding-top: 50px;
   padding-bottom: 100%;
 }
-@media screen and (max-width: 970px) {
+.produto{
+  background: #000;
+  height: 310px;
+  margin-top: 20px;
+}
+.produto-container{
+  height: 350px;
+}
 
+@media screen and (max-width: 970px) {
   .navbar-nav > form > .form-group > input {
     padding-right: 5px;
   }

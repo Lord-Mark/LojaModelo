@@ -7,13 +7,14 @@ class ProdutosModel extends PersistModelAbstract
     private $id;
     private $data;
 
-    function __construct($id)
+    function __construct($id = null)
     {
         #inicia a variável o_db (PDO)
         parent::__construct();
 
         #seta o primeiro produto
-        $this->setProduto($id);
+        if ($id != null)
+            $this->setProduto($id);
     }
 
     /**
@@ -25,11 +26,11 @@ class ProdutosModel extends PersistModelAbstract
 
         #checa se o item existe no database, se existe, retornará uma array, caso contrário retornará false
         $produto = $this->checkItem();
-
         if ($produto !== false) {
             $this->data = $produto;
             return $produto;
         } else {
+            echo "Oops";
             $error = "O produto não foi encontrado";
             return $error;
         }
@@ -37,7 +38,7 @@ class ProdutosModel extends PersistModelAbstract
 
     private function checkItem()
     {
-        $sql = "SELECT * FROM `tbl_produtos` WHERE id = $this->id";
+        $sql = "SELECT * FROM `tbl_produtos` WHERE id_produto = $this->id";
 
         $return = $this->o_db->prepare($sql);
         $return->execute();
