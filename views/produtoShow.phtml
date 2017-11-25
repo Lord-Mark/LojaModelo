@@ -5,7 +5,7 @@
                 $price = $v_params["produtosData"][$array_size]["preco_produto"];
                 $url = $v_params["produtosData"][$array_size]["url_produto"];
                 $categoria = $v_params["produtosData"][$array_size]["categoria_produto"];
-            
+                $descricao = $v_params["produtosData"][$array_size]["descricao"];
             ?>
             
                 <div class="produto-container col-lg-4 col-md-4">
@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="back">
                                     <h1 class="entypo-mobile"><?php echo "<br>R$ ".$price?></h1>
-                                    <p><?php echo $nome."<br><br>".$categoria?></p>
+                                    <p><?php echo $nome."<br><br>".$descricao?></p>
                                 </div>
                             </div>
                         </a>
