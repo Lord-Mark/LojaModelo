@@ -19,7 +19,7 @@ abstract class PersistModelAbstract
         $st_usuario = 'root';
         $st_senha = '';
 
-        $st_dsn = "mysql:host=$st_host;dbname=$st_banco"; 
+        $st_dsn = "mysql:host=$st_host;dbname=$st_banco;charset=utf8"; 
         $this->o_db = new PDO
         (
             $st_dsn,
