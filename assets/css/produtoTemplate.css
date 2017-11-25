@@ -1,6 +1,6 @@
-#wrap-link{
-  text-decoration: none;
-  color: #FFF;
+.wrap-link{
+  text-decoration: none !important;
+  color: #FFF !important;;
   text-shadow: #000 0px 0px 1px, #000 0px 0px 2px, #000 0px 0px 3px;
 }
 .wrap{
@@ -13,13 +13,14 @@
   box-shadow: #000 0 0 10px ;
 }
 .front, .back{
-  height:120%;
+  height:100%;
   width: 100%
 }
 
 /* Front */ 
 .front img{
   width:100%;
+  height: 100%;
 }
 .front p:before{
   font-family:"entypo";

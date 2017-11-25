@@ -4,7 +4,6 @@
 */
 class ProdutosModel extends PersistModelAbstract
 {
-    private $id;
     private $data;
 
     function __construct($id = null)
@@ -14,18 +13,29 @@ class ProdutosModel extends PersistModelAbstract
 
         #seta o primeiro produto
         if ($id != null)
-            $this->setProduto($id);
+            $this->checkProdutos($id);
     }
 
     /**
     * define o produto a ser pesquisado no database
     */
-    public function setProduto($id)
+    public function checkProdutos($id = null, $nome = null, $order = "id_produto")
     {
-        $this->id = $id;
-
         #checa se o item existe no database, se existe, retornará uma array, caso contrário retornará false
-        $produto = $this->checkItem();
+        
+        #se id não for nulo, então o nome será (não faz sentido passar os dois parâmetros) 
+        if ($id != null) {
+            $produto = $this->checkItem($id, null, $order);
+        }
+        #se nome não for nulo, então o id será (não faz sentido passar os dois parâmetros)
+        elseif ($nome != null) {
+            $produto = $this->checkItem(null, $nome, $order);
+        }
+        #listará todos os arquivos
+        else {
+            $produto = $this->checkItem();
+        }
+
         if ($produto !== false) {
             $this->data = $produto;
             return $produto;
@@ -36,9 +46,15 @@ class ProdutosModel extends PersistModelAbstract
         }
     }
 
-    private function checkItem()
+    private function checkItem($id = null, $nome = null, $order = "id_produto")
     {
-        $sql = "SELECT * FROM `tbl_produtos` WHERE id_produto = $this->id";
+        if ($id != null) {
+            $sql = "SELECT * FROM `tbl_produtos` WHERE id_produto = $id ORDER BY $order";
+        } elseif ($nome != null) {
+            $sql = "SELECT * FROM `tbl_produtos` WHERE nome_produto = $nome ORDER BY $order";
+        } else {
+            $sql = "SELECT * FROM `tbl_produtos` ORDER BY $order";
+        }
 
         $return = $this->o_db->prepare($sql);
         $return->execute();
@@ -49,7 +65,6 @@ class ProdutosModel extends PersistModelAbstract
         if (count($check) <= 0) {
             return false;
         } else {
-            $check = array_shift($check);
             return $check;
         }
     }

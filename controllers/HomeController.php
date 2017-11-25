@@ -53,10 +53,12 @@ class HomeController
 		#adiciona o arquivo home.phtml para ser exibido entre o header e o footer
 		
 		$this->produtos = new ProdutosModel();
-        $produtosData = $this->produtos->setProduto(1);
+        $produtosData = $this->produtos->checkProdutos();
 
-        $this->v_params = array_merge($this->v_params, $produtosData);
+        $this->v_params["produtosData"] = $produtosData;
 
+#	    var_dump($this->v_params);
+        
         #print_r($v_params);
 		$this->o_view->addView("views/home.phtml");
 
