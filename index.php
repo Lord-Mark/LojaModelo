@@ -9,4 +9,3 @@ error_reporting(E_ALL);
 require_once 'lib/Application.php';
 $o_Application = new Application();
 $o_Application->dispatch();
-#teste
